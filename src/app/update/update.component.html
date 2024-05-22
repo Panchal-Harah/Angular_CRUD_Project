@@ -1,0 +1,27 @@
+<form [formGroup]="updateForm" (submit)="updateUser()">
+    <h1>Update Form</h1>
+
+    <label>First Name:</label>
+    <input type="text" name="fname" id="fname" formControlName="fname"><br>
+
+    <label>Last Name:</label>
+    <input type="text" name="lname" id="lname" formControlName="lname"><br>
+
+    <label>Email: </label>
+    <input type="email" name="email" id="email" formControlName="email"><br>
+
+    <label>DOB: </label>
+    <input type="date" name="dob" id="dob" formControlName="dob"><br>
+
+    <label>Gender: </label>
+    <div>
+        <input type="radio" name="gender" value="Male" formControlName="gender"><label>Male </label>
+        <input type="radio" name="gender" value="Female" formControlName="gender"><label>Fmale </label>
+        <input type="radio" name="gender" value="Others" formControlName="gender"><label>Others</label>
+    </div>
+
+    <label>Password: </label>
+    <input type="password" name="password" id="password" formControlName="password"><br>
+
+    <input type="submit" value="Update User">
+</form>

@@ -1,0 +1,42 @@
+<h1>Registration Form</h1>
+
+<form [formGroup] = "registrationForm" (submit)="registerForm()">
+
+    <label>First Name: </label>
+    <input type="text" name="fname" id="fname" formControlName="fname"> <br>
+
+    <label>Last Name: </label>
+    <input type="text" name="lname" id="lname" formControlName="lname"> <br>
+
+    <label>Email: </label>
+    <input type="text" name="email" id="email" formControlName="email"><br>
+
+    <label>DOB: </label>
+    <input type="text" name="dob" id="dob" formControlName="dob"><br>
+    
+    <label>Gender: </label>
+    <div>
+        <input type="radio" name="gender" value="Male" formControlName="gender"><label>Male</label>
+        <input type="radio" name="gender" value="Female" formControlName="gender"><label>Female</label>
+        <input type="radio" name="gender" value="Others" formControlName="gender"><label>Others</label>
+    </div>
+
+    <label>Password: </label>
+    <input type="password" name="password" id="password" formControlName="password">
+        <br>
+    <input type="submit" value="Register">
+    <input type="button" value="show data" (click)="showData()">
+</form>
+
+
+<ul>
+    @for (user of userData; track user.id){
+        <li style="font-weight: 600;">{{user.fname}} {{user.lname}}</li>
+        <li>{{user._id}}</li> <br>
+        <input type="button" value="Update User" (click)="updateData(user._id)">
+        <input type="button" value="Delete User" (click)="deleteData(user._id)">
+    }@empty{
+        <span>Empty list of users</span>
+    }
+</ul>
+    
